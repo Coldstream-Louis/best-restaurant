@@ -1,0 +1,101 @@
+#head{
+    left:0px;
+    top:100px;
+    width:100%;
+    height:22px;
+    position: absolute;
+}
+#head img{
+    width:100%;
+    height:102px;
+    position: absolute;"
+}
+#head h1{
+    text-align: center;
+    font-size: 35px;
+    position: absolute;
+    left:45%;
+    color:white;
+}
+h6.top{font-family:"PingFang SC";
+    font-weight: 200;
+    font-size:48px;
+    color:#4a4a4a;
+    text-align:center;
+    width:415px;
+    left:33%;
+    top:236px;
+    position: absolute;
+}
+h6.selection{font-family:"PingFang SC";
+    font-weight: 200;
+    font-size:18px;
+    color:#4a4a4a;
+    text-align:center;
+    width:90px;
+    position: absolute;
+    top:350px;
+}
+h6.selection:hover{text-decoration: underline; font-weight: 400; cursor: pointer;}
+p{font-family:"PingFang SC";
+    font-weight: 200;
+    font-size:20px;
+    color:#4a4a4a;
+    text-align:center;
+    width:90px;
+    position: absolute;
+    top:250px;
+}
+
+input{border:2px solid grey;
+    width: 200px;
+    height: 32px;
+    border-radius: 4px;
+}
+input[type="button"]:hover{cursor: pointer;}
+
+h6.selection2{
+    font-family:"PingFang SC";
+    font-weight: 400;
+    font-size:22px;
+    text-align:right;
+    color:#4a4a4a;
+    position: absolute;
+    right:0;
+    margin:-15px 10px 0 0;
+    paddng:0 0 0 0;
+}
+h6.selection2:hover{text-decoration: underline; font-weight: 600; cursor: pointer;}
+
+h6.normal{font-family:"PingFang SC";
+    font-weight: 200;
+    font-size:20px;
+    margin:0;
+    padding:0;
+}
+table.hoverTable {
+    font-family: verdana,arial,sans-serif;
+    font-size:11px;
+    color:#333333;
+    border: none;
+    border-bottom: 1px solid grey;
+    border-color: #999999;
+    border-collapse: collapse;
+}
+table.hoverTable th {
+    border:none;
+    border-bottom: 2px solid grey;
+    border-top: 1px solid grey;
+    padding: 8px;
+}
+table.hoverTable tr {
+    border:none;
+    height:70px;
+    border-bottom: 1px solid grey;
+}
+table.hoverTable td {
+    padding: 8px;
+    border:none;
+    font-size: 22px;
+    font-weight: 400;
+}

@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>个人主页</title>
+    <link rel="stylesheet" type="text/css" href="css/通用元素.css" />
+    <link rel="stylesheet" type="text/css" href="css/个人主页元素.css" />
+</head>
+<body>
+
+<!--顶部导航栏-->
+<div class="navigatorBar">
+    <div id="name_block" class="greenRect">
+        <h1>美食-侦探</h1>
+        <h2>给你一双发现美食的眼睛</h2>
+    </div>
+    <h3 style="left:32%;">首页</h3> <!--可点-->
+    <h3 style="left:42%;">团购</h3> <!--可点-->
+    <h3 style="left:52%;">优惠</h3> <!--可点-->
+    <h3 style="left:62%;">订座</h3> <!--可点-->
+    <h3 style="left:72%;">点单</h3> <!--可点-->
+    <img src="首页素材/avatar.png" style="left:82%; top:36px; width:25px; height:25px; position: absolute;"/>
+    <h3 style="left:85%">Hello! 徐哲涵</h3> <!--可点-->
+    <Line style="left:81%; width:180px"></Line>
+</div>
+
+<div id="head" >
+    <img src="餐厅搜索素材/timber.jpg" />
+    <h1 style="margin:20px auto; text-align: center;">个人主页</h1>
+</div>
+
+<h6 class="top">欢迎回来! XXX</h6>
+<Line style="background: #7c7c7c;
+      width:88%;
+      height:2px;
+      left:6%;
+      top:320px;
+      position:absolute;"></Line>
+<h6 class="selection" style="left:8%;" onclick="personalInfo();">个人信息</h6> <!--可点-->
+<h6 class="selection" style="left:20%;" onclick="history();">个人历史</h6> <!--可点-->
+<h6 class="selection" style="left:32%;" onclick="collection();">个人收藏</h6> <!--可点-->
+<h6 class="selection" style="left:45%;" onclick="coupon();">我的优惠券</h6> <!--可点-->
+<h6 class="selection" style="left:58%;" onclick="group();">我的团购</h6> <!--可点-->
+<h6 class="selection" style="left:71%;" onclick="card();">我的会员卡</h6> <!--可点-->
+<h6 class="selection" style="left:84%; " onclick="rating();">我的点评</h6> <!--可点-->
+
+<Line id="choose" style="width:90px; height:3px; left:8.1%; top:390px;
+position:absolute; display:none; background:#4a4a4a"></Line>
+<!--初始占位图片-->
+<img id="0" src="个人主页素材/面包.jpg" style="left:6%; top:400px; width:88%; height:450px; position: absolute;"/>
+
+<!--个人信息-->
+<div id="1" style="display: none;">
+    <p id = "realName" style="text-align:left; left:14%; top:430px; width:400px; position:absolute;">真实姓名:&nbsp;&nbsp;&nbsp;XXX</p>
+    <p style="text-align:left; left:14%; top:500px; width:400px; position:absolute;">昵称:&nbsp;&nbsp;&nbsp;&nbsp;</p>
+    <p id = "oldPhone" style="text-align:left; left:14%; top:570px; width:400px; position:absolute;">
+        手机号:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;13678299085</p>
+    <p style="text-align:left; left:14%; top:640px; width:400px; position:absolute;">新手机号:&nbsp;&nbsp;&nbsp;&nbsp;</p>
+    <input type="text" id="nick_name" style="left:22%; top:490px; position:absolute;" value="旧昵称"/>
+    <input type="text" id="newPhone" style="left:22%; top:630px; position:absolute;"/>
+    <Line style="left:50%; top:420px; position:absolute; width:2px; height:290px; background:#4a4a4a;"></Line>
+    <p style="text-align:left; left:60%; top:430px; width:400px; position:absolute;">
+        用户ID:&nbsp;&nbsp;&nbsp;10293829</p>
+    <p style="text-align:left; left:60%; top:490px; width:400px; position:absolute;">
+        原密码:&nbsp;&nbsp;&nbsp;</p>
+    <p style="text-align:left; left:60%; top:570px; width:400px; position:absolute;">
+        新密码:&nbsp;&nbsp;&nbsp;</p>
+    <input type="password" id="oldPassword" style="left:67%; top:490px; position:absolute;"/>
+    <input type="password" id="newPassword" style="left:67%; top:560px; position:absolute;"/>
+    <input type="button" id="not_change" onclick="not_change();" style="background:#b6c7ff;
+    border:none; width:140px; left:60%; top:640px; position:absolute; color:#ffffff; font-size:20px;" value="放弃修改"/>
+    <input type="button" id="change" onclick="change();" style="background:#7ed321;
+    border:none; width:140px; left:72.5%; top:640px; position:absolute; color:#ffffff; font-size:20px;" value="提交修改"/>
+</div>
+
+<!--个人历史-->
+<div id="2" style="display: none;">
+    <h6 class="selection" style="left:87%; top:400px;" onclick="delete_all();">清空</h6> <!--可点-->
+    <table id ="historyTable" class="hoverTable" border="below" style="left:6%; top:450px; width:88%; height: auto; position: absolute;">
+        <tr id="2_0">
+            <th style="text-align: left; font-size: 24px;">图片</th>
+            <th style="text-align: center; font-size: 24px;">店铺</th>
+            <th style="text-align: center; font-size: 24px;">浏览时间</th>
+            <th style="text-align: right; font-size: 24px;">操作</th>
+        </tr>
+    </table>
+</div>
+
+<!--个人收藏-->
+<div id="3" style="display: none;">
+    <table id ="collectionTable" class="hoverTable" border="below" style="left:6%; top:450px; width:88%; height: auto; position: absolute;">
+        <tr>
+            <th style="text-align: left; font-size: 24px;">图片</th>
+            <th style="text-align: center; font-size: 24px;">店铺</th>
+            <th style="text-align: center; font-size: 24px;">加入收藏时间</th>
+            <th style="text-align: right; font-size: 24px;">操作</th>
+        </tr>
+    </table>
+</div>
+
+<!--我的优惠券-->
+<div id="4" style="display: none;">
+    <table id ="couponTable" class="hoverTable" border="below" style="left:6%; top:450px; width:88%; height: auto; position: absolute;">
+        <tr>
+            <th style="text-align: left; font-size: 24px;">图片</th>
+            <th style="text-align: center; font-size: 24px;">店铺</th>
+            <th style="text-align: center; font-size: 24px;">属性</th>
+            <th style="text-align: right; font-size: 24px;">到期时间</th>
+        </tr>
+    </table>
+</div>
+
+<!--我的团购-->
+<div id="5" style="display: none;">
+    <table id ="groupTable" class="hoverTable" border="below" style="left:6%; top:450px; width:88%; height: auto; position: absolute;">
+        <tr>
+            <th style="text-align: left; font-size: 24px;">图片</th>
+            <th style="text-align: center; font-size: 24px;">店铺</th>
+            <th style="text-align: center; font-size: 24px;">属性</th>
+            <th style="text-align: center; font-size: 24px;">金额</th>
+            <th style="text-align: center; font-size: 24px;">到期时间</th>
+            <th style="text-align: right; font-size: 24px;">操作</th>
+        </tr>
+    </table>
+</div>
+
+<!--我的会员卡-->
+<div id="6" style="display: none;">
+    <table id="cardTable" class="hoverTable" border="below" style="left:6%; top:450px; width:88%; height: auto; position: absolute;">
+        <tr>
+            <th style="text-align: left; font-size: 24px;">图片</th>
+            <th style="text-align: center; font-size: 24px;">店铺</th>
+            <th style="text-align: center; font-size: 24px;">折扣度</th>
+            <th style="text-align: right; font-size: 24px;">入会时间</th>
+        </tr>
+    </table>
+</div>
+
+<!--我的点评-->
+<div id="7" style="display: none;">
+    <table id="rateTable" class="hoverTable" border="below" style="left:6%; top:450px; width:88%; height: auto; position: absolute;">
+        <tr>
+            <th style="text-align: left; font-size: 24px;">图片</th>
+            <th style="text-align: center; font-size: 24px;">店铺</th>
+            <th style="text-align: center; font-size: 24px;">评星</th>
+            <th style="text-align: center; font-size: 24px;">点评时间</th>
+            <th style="text-align: center; font-size: 24px;">点评内容</th>
+        </tr>
+    </table>
+</div>
+
+<!--底部装饰-->
+<div id="bottom" style="left:0px; top:920px; width:100%; height:222px; position: absolute;">
+    <img src="首页素材/timber.jpg" style="width:100%; height:222px; position: absolute; z-index: -1;"/>
+    <h4>美食-侦探</h4>
+    <h5>Made by School of Software Engineering in Tongji University</h5>
+</div>
+
+<script>
+    var Password="abcdefg";
+    var phone = "13678299085";
+    var nickName = "David";
+    var current=0;
+    var hist_on = false;
+    var collect_on = false;
+    var coup_on = false;
+    var gp_on = false;
+    var card_on = false;
+    var rate_on = false;
+    function hist(image, name, time){
+        this.image = image;
+        this.name = name;
+        this.time = time;
+    }
+    function collect(image, name, time){
+        this.image = image;
+        this.name = name;
+        this.time = time;
+    }
+    function coup(image, name, type, time){
+        this.image = image;
+        this.name = name;
+        this.type = type;
+        this.time = time;
+    }
+    function gp(image, name, type, price, time){
+        this.image = image;
+        this.name = name;
+        this.type = type;
+        this.price = price;
+        this.time = time;
+    }
+    function mCard(image, name, discount, time){
+        this.image = image;
+        this.name = name;
+        this.discount = discount;
+        this.time = time;
+    }
+    function rate(image, name, star, time, content){
+        this.image = image;
+        this.name = name;
+        this.star = star;
+        this.time = time;
+        this.content = content;
+    }
+    var hist_list = new Array();
+    hist_list[0] = new hist("个人主页素材/面包.jpg", "徐大叔的店", "2017.7.10");
+    hist_list[1] = new hist("个人主页素材/面包.jpg", "杨灏诚的店", "2017.7.9");
+    hist_list[2] = new hist("个人主页素材/面包.jpg", "杨灏的店", "2017.7.8");
+    hist_list[3] = new hist("个人主页素材/面包.jpg", "杨的店", "2017.7.7");
+
+    var collect_list = new Array();
+    collect_list[0] = new collect("个人主页素材/面包.jpg", "徐大叔的店", "2017.7.10");
+    collect_list[1] = new collect("个人主页素材/面包.jpg", "杨灏诚的店", "2017.7.9");
+
+    var coup_list = new Array();
+    coup_list[0] = new coup("个人主页素材/面包.jpg", "徐大叔的店", "满100减10", "2017.8.10");
+    coup_list[1] = new coup("个人主页素材/面包.jpg", "杨灏诚的店", "满100减15", "2017.8.9");
+
+    var gp_list = new Array();
+    gp_list[0] = new gp("个人主页素材/面包.jpg", "徐大叔的店", "单人工作餐", "50元", "2017.8.10");
+    gp_list[1] = new gp("个人主页素材/面包.jpg", "杨灏诚的店", "双人套餐", "140元", "2017.8.9");
+
+    var card_list = new Array();
+    card_list[0] = new mCard("个人主页素材/面包.jpg", "徐大叔的店", "10%off", "2017.7.10");
+    card_list[1] = new mCard("个人主页素材/面包.jpg", "杨灏诚的店", "12%off", "2017.7.9");
+
+    var rate_list = new Array();
+    rate_list[0] = new rate("个人主页素材/面包.jpg", "徐大叔的店", 5, "2017.7.10",
+            "长寿路上，旁边就是地铁站，市口不错的，就是招牌小了一些。" +
+            "店里不大，工作日晚上店里生意不错的。"+
+            "布置的简单又有一些异域风情。"+
+            "这次是因为517活动光顾的，下单很顺利，" +
+            "看了点评推荐他们家羊肉串，于是我也点了一串。"+
+            "羊肉串一定要趁热吃，味道很不错，8元一串。"+
+            "大盘鸡拌面上来的时候看着量挺多的，卖相也不错，鸡肉大块。");
+    rate_list[1] = new rate("个人主页素材/面包.jpg", "杨灏诚的店", 4, "2017.7.9", "生日这天来莫尔顿吃牛排！" +
+            "到的时候刚过5点，店里就坐了几个人，顿时有种包场的赶脚啊！"+
+            "因为是生日，所以给特制了menu，拿到的时候有点小感动，"+
+            "哈哈！我就是这么感性的人！"+
+            "餐前大面包简直比我的脸还大！看图，真的超大一个！" +
+            "巨无霸啊！我的建议，直接上手撕吧！不是很喜欢配的黄油，感觉干吃更美味。");
+    function historyCreate(){
+        for(let i=1; i<=hist_list.length; i++){
+            var x = document.createElement("tr");
+            x.id = "2_"+i;
+            x.onmouseover=function(){this.style.backgroundColor='#ffff66';} ;
+            x.onmouseout=function(){this.style.backgroundColor='#ffffff';}  ;
+            var y = document.getElementById("historyTable");
+            y.appendChild(x);
+            var z1 = document.createElement("td");
+            var z2 = document.createElement("td");
+            var z3 = document.createElement("td");
+            var z4 = document.createElement("td");
+            var picture = document.createElement("img");
+            picture.style.width="100px";
+            picture.style.height="75px";
+            picture.src = hist_list[i-1].image;
+            z1.appendChild(picture);
+            z1.style.width="120px";
+            z2.style.textAlign="center";
+            z3.style.textAlign="center";
+            z4.style.textAlign="right";
+            z2.innerHTML=hist_list[i-1].name;
+            z3.innerHTML=hist_list[i-1].time;
+            op = document.createElement("h6");
+            op.className = "selection2";
+            op.innerHTML = "删除";
+            z4.appendChild(op);
+            x.appendChild(z1);
+            x.appendChild(z2);
+            x.appendChild(z3);
+            x.appendChild(z4);
+            op.onclick=function(){
+                delete_history(i);
+            };
+            hist_on=true;
+        }
+        var distance = 600+hist_list.length*100;
+        document.getElementById("bottom").style.top = distance+"px";
+    }
+    function collectionCreate(){
+        for(let i=1; i<=collect_list.length; i++){
+            var x = document.createElement("tr");
+            x.id = "3_"+i;
+            x.onmouseover=function(){this.style.backgroundColor='#ffff66';} ;
+            x.onmouseout=function(){this.style.backgroundColor='#ffffff';}  ;
+            var y = document.getElementById("collectionTable");
+            y.appendChild(x);
+            var z1 = document.createElement("td");
+            var z2 = document.createElement("td");
+            var z3 = document.createElement("td");
+            var z4 = document.createElement("td");
+            var picture = document.createElement("img");
+            picture.style.width="100px";
+            picture.style.height="75px";
+            picture.src = collect_list[i-1].image;
+            z1.appendChild(picture);
+            z1.style.width="120px";
+            z2.style.textAlign="center";
+            z3.style.textAlign="center";
+            z4.style.textAlign="right";
+            z2.innerHTML=collect_list[i-1].name;
+            z3.innerHTML=collect_list[i-1].time;
+            var op = document.createElement("h6");
+            op.className = "selection2";
+            op.innerHTML = "移出收藏";
+            z4.appendChild(op);
+            x.appendChild(z1);
+            x.appendChild(z2);
+            x.appendChild(z3);
+            x.appendChild(z4);
+            op.onclick=function(){
+                delete_collection(i);
+            };
+            collect_on=true;
+        }
+        var distance = 600+collect_list.length*100;
+        document.getElementById("bottom").style.top = distance+"px";
+    }
+    function coupCreate() {
+        for(var i=1; i<=coup_list.length; i++){
+            var x = document.createElement("tr");
+            x.id = "4_"+i;
+            x.onmouseover=function(){this.style.backgroundColor='#ffff66';} ;
+            x.onmouseout=function(){this.style.backgroundColor='#ffffff';}  ;
+            var y = document.getElementById("couponTable");
+            y.appendChild(x);
+            var z1 = document.createElement("td");
+            var z2 = document.createElement("td");
+            var z3 = document.createElement("td");
+            var z4 = document.createElement("td");
+            var picture = document.createElement("img");
+            picture.style.width="100px";
+            picture.style.height="75px";
+            picture.src = collect_list[i-1].image;
+            z1.appendChild(picture);
+            z1.width = "120px";
+            z2.style.textAlign="center";
+            z3.style.textAlign="center";
+            z4.style.textAlign="right";
+            z2.innerHTML=coup_list[i-1].name;
+            z3.innerHTML=coup_list[i-1].type;
+            z4.innerHTML=coup_list[i-1].time;
+            x.appendChild(z1);
+            x.appendChild(z2);
+            x.appendChild(z3);
+            x.appendChild(z4);
+            coup_on=true;
+        }
+    }
+    function gpCreate(){
+        for(let i=1; i<=gp_list.length; i++) {
+            var x = document.createElement("tr");
+            x.id = "5_" + i;
+            x.onmouseover = function () {
+                this.style.backgroundColor = '#ffff66';
+            };
+            x.onmouseout = function () {
+                this.style.backgroundColor = '#ffffff';
+            };
+            var y = document.getElementById("groupTable");
+            y.appendChild(x);
+            var z1 = document.createElement("td");
+            var z2 = document.createElement("td");
+            var z3 = document.createElement("td");
+            var z4 = document.createElement("td");
+            var z5 = document.createElement("td");
+            var z6 = document.createElement("td");
+            var picture = document.createElement("img");
+            picture.style.width = "100px";
+            picture.style.height = "75px";
+            picture.src = collect_list[i - 1].image;
+            z1.appendChild(picture);
+            z1.width="120px";
+            z2.style.textAlign = "center";
+            z3.style.textAlign = "center";
+            z4.style.textAlign = "center";
+            z5.style.textAlign = "center";
+            z6.style.textAlign = "right";
+            z2.innerHTML = gp_list[i - 1].name;
+            z3.innerHTML = gp_list[i - 1].type;
+            z4.innerHTML = gp_list[i - 1].price;
+            z5.innerHTML = gp_list[i - 1].time;
+            var op = document.createElement("h6");
+            op.className = "selection2";
+            op.innerHTML = "退款";
+            z6.appendChild(op);
+            x.appendChild(z1);
+            x.appendChild(z2);
+            x.appendChild(z3);
+            x.appendChild(z4);
+            x.appendChild(z5);
+            x.appendChild(z6);
+            op.onclick=function(){
+                delete_group(i);
+            };
+            gp_on = true;
+        }
+        var distance = 600+gp_list.length*100;
+        document.getElementById("bottom").style.top = distance+"px";
+    }
+    function cardCreate(){
+        for(var i=1; i<=card_list.length; i++){
+            var x = document.createElement("tr");
+            x.id = "6_"+i;
+            x.onmouseover=function(){this.style.backgroundColor='#ffff66';} ;
+            x.onmouseout=function(){this.style.backgroundColor='#ffffff';}  ;
+            var y = document.getElementById("cardTable");
+            y.appendChild(x);
+            var z1 = document.createElement("td");
+            var z2 = document.createElement("td");
+            var z3 = document.createElement("td");
+            var z4 = document.createElement("td");
+            var picture = document.createElement("img");
+            picture.style.width="100px";
+            picture.style.height="75px";
+            picture.src = collect_list[i-1].image;
+            z1.appendChild(picture);
+            z1.width = "120px";
+            z2.style.textAlign="center";
+            z3.style.textAlign="center";
+            z4.style.textAlign="right";
+            z2.innerHTML=card_list[i-1].name;
+            z3.innerHTML=card_list[i-1].discount;
+            z4.innerHTML=card_list[i-1].time;
+            x.appendChild(z1);
+            x.appendChild(z2);
+            x.appendChild(z3);
+            x.appendChild(z4);
+            card_on=true;
+        }
+    }
+    function rateCreate(){
+        for(var i=1; i<=rate_list.length; i++){
+            var x = document.createElement("tr");
+            x.id = "7_"+i;
+            x.onmouseover=function(){this.style.backgroundColor='#ffff66';} ;
+            x.onmouseout=function(){this.style.backgroundColor='#ffffff';}  ;
+            var y = document.getElementById("rateTable");
+            y.appendChild(x);
+            var z1 = document.createElement("td");
+            var z2 = document.createElement("td");
+            var z3 = document.createElement("td");
+            var z4 = document.createElement("td");
+            var z5 = document.createElement("td");
+            var picture = document.createElement("img");
+            picture.style.width="100px";
+            picture.style.height="75px";
+            picture.src = rate_list[i-1].image;
+            z1.appendChild(picture);
+            z1.width = "120px";
+            z2.style.textAlign="center";
+            z4.style.textAlign="center";
+            z3.style.textAlign="center";
+            z5.style.textAlign="left";
+            z2.innerHTML=rate_list[i-1].name;
+            z4.innerHTML=rate_list[i-1].time;
+            z5.innerHTML=rate_list[i-1].content;
+            z5.style.width="400px";
+            z5.style.fontSize="12px";
+            var b_star=new Array();
+            for(var j=0; j < rate_list[i-1].star; j++){
+                b_star = document.createElement("img");
+                b_star.style.width = "20px";
+                b_star.style.height = "20px";
+                b_star.src = "个人主页素材/star.png";
+                z3.appendChild(b_star);
+            }
+            x.appendChild(z1);
+            x.appendChild(z2);
+            x.appendChild(z3);
+            x.appendChild(z4);
+            x.appendChild(z5);
+            rate_on=true;
+        }
+    }
+    function personalInfo(){
+        document.getElementById(current.toString()).style.display="none";
+        document.getElementById("1").style.display="block";
+        document.getElementById("nick_name").value = nickName;
+        document.getElementById("oldPhone").innerHTML = "手机号:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+phone;
+        document.getElementById("newPhone").value = "";
+        document.getElementById("oldPassword").value = "";
+        document.getElementById("newPassword").value = "";
+        current=1;
+        document.getElementById("choose").style.display = "block";
+        document.getElementById("choose").style.left = "8.1%";
+        document.getElementById("bottom").style.top = "760px";
+    }
+    function not_change(){
+        document.getElementById("1").style.display="none";
+        document.getElementById("0").style.display="block";
+        current=0;
+        document.getElementById("choose").style.display = "none";
+        document.getElementById("bottom").style.top = "920px";
+    }
+    function change(){
+        if(document.getElementById("oldPassword").value !== Password){
+            alert("原密码输入错误, 个人信息更改失败!");
+            return;
+        }
+        if(document.getElementById("newPassword").value.length < 6){
+            alert("新密码长度不能小于6位!");
+            return;
+        }
+        if(document.getElementById("nick_name").value === ""){
+            alert("昵称不能为空!");
+            return;
+        }
+        if(document.getElementById("newPhone").value.length !== 11){
+            alert("手机号的位数不符合要求!");
+            return;
+        }
+        Password = document.getElementById("newPassword").value;
+        phone = document.getElementById("newPhone").value;
+        nickName = document.getElementById("nick_name").value;
+        alert("您已成功修改个人信息!");
+        document.getElementById("1").style.display="none";
+        document.getElementById("0").style.display="block";
+        current=0;
+        document.getElementById("choose").style.display = "none";
+        document.getElementById("bottom").style.top = "920px";
+    }
+    // 清空历史
+    function delete_all(){
+        for(var i=1; i<=hist_list.length; i++){
+            var tuple = document.getElementById("2_"+i);
+            document.getElementById("historyTable").removeChild(tuple);
+        }
+        document.getElementById("bottom").style.top = "600px";
+        hist_list = new Array();
+    }
+    // 删除一个历史
+    function delete_history(number){
+        for(var i=1; i<=hist_list.length; i++){
+            var tuple = document.getElementById("2_"+i);
+            document.getElementById("historyTable").removeChild(tuple);
+        }
+        hist_list.splice(number-1,1);
+        historyCreate();
+    }
+    // 移除一个收藏
+    function delete_collection(number){
+        for(var i=1; i<=collect_list.length; i++){
+            var tuple = document.getElementById("3_"+i);
+            document.getElementById("collectionTable").removeChild(tuple);
+        }
+        collect_list.splice(number-1,1);
+        alert("已成功将该店移出收藏列表!");
+        collectionCreate();
+    }
+    // 团购退款
+    function delete_group(number){
+        for(var i=1; i<=gp_list.length; i++){
+            var tuple = document.getElementById("5_"+i);
+            document.getElementById("groupTable").removeChild(tuple);
+        }
+        gp_list.splice(number-1,1);
+        alert("已成功提交退款申请!");
+        gpCreate();
+    }
+    function history(){
+        document.getElementById(current.toString()).style.display="none";
+        document.getElementById("2").style.display="block";
+        if(hist_on === false)
+            historyCreate();
+        current=2;
+        document.getElementById("choose").style.display = "block";
+        document.getElementById("choose").style.left = "20.1%";
+        var distance = 600+hist_list.length*100;
+        document.getElementById("bottom").style.top = distance+"px";
+    }
+    function collection(){
+        document.getElementById(current.toString()).style.display="none";
+        document.getElementById("3").style.display="block";
+        if(collect_on === false)
+            collectionCreate();
+        current=3;
+        document.getElementById("choose").style.display = "block";
+        document.getElementById("choose").style.left = "32.1%";
+        var distance = 600+collect_list.length*100;
+        document.getElementById("bottom").style.top = distance+"px";
+    }
+    function coupon(){
+        document.getElementById(current.toString()).style.display="none";
+        document.getElementById("4").style.display="block";
+        if(coup_on === false)
+            coupCreate();
+        current=4;
+        document.getElementById("choose").style.display = "block";
+        document.getElementById("choose").style.left = "45.1%";
+        var distance = 600+coup_list.length*100;
+        document.getElementById("bottom").style.top = distance+"px";
+    }
+    function group(){
+        document.getElementById(current.toString()).style.display="none";
+        document.getElementById("5").style.display="block";
+        if(gp_on === false)
+            gpCreate();
+        current=5;
+        document.getElementById("choose").style.display = "block";
+        document.getElementById("choose").style.left = "58.1%";
+        var distance = 600+gp_list.length*100;
+        document.getElementById("bottom").style.top = distance+"px";
+    }
+    function card(){
+        document.getElementById(current.toString()).style.display="none";
+        document.getElementById("6").style.display="block";
+        if(card_on === false)
+            cardCreate();
+        current=6;
+        document.getElementById("choose").style.display = "block";
+        document.getElementById("choose").style.left = "71.1%";
+        var distance = 600+card_list.length*100;
+        document.getElementById("bottom").style.top = distance+"px";
+    }
+    function rating(){
+        document.getElementById(current.toString()).style.display="none";
+        document.getElementById("7").style.display="block";
+        if(rate_on === false)
+            rateCreate();
+        current=7;
+        document.getElementById("choose").style.display = "block";
+        document.getElementById("choose").style.left = "84.1%";
+        var distance = 600+rate_list.length*100;
+        document.getElementById("bottom").style.top = distance+"px";
+    }
+</script>
+</body>
+</html>

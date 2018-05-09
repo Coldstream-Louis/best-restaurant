@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>餐厅内部界面</title>
+    <link rel="stylesheet" type="text/css" href="css/通用元素.css" />
+    <link rel="stylesheet" type="text/css" href="css/餐厅内部元素.css" />
+</head>
+<body>
+<!--顶部导航栏-->
+<div class="navigatorBar">
+    <div id="name_block" class="greenRect">
+        <h1>美食-侦探</h1>
+        <h2>给你一双发现美食的眼睛</h2>
+    </div>
+    <h3 style="left:32%;">首页</h3> <!--可点-->
+    <h3 style="left:42%;">团购</h3> <!--可点-->
+    <h3 style="left:52%;">优惠</h3> <!--可点-->
+    <h3 style="left:62%;">订座</h3> <!--可点-->
+    <h3 style="left:72%;">点单</h3> <!--可点-->
+    <img src="首页素材/avatar.png" style="left:82%; top:36px; width:25px; height:25px; position: absolute;"/>
+    <h3 style="left:85%">Hello! 徐哲涵</h3> <!--可点-->
+</div>
+
+<!--标题-->
+<div id="head" >
+    <img src="餐厅内部素材/timber.jpg" />
+    <h1 style="margin:20px auto; text-align: center;">餐厅</h1>
+</div>
+
+<div class="info">
+    <h1>PINTOX</h1>
+    <div style="position: absolute; top:26px; right:5%;">
+        <input type="button" id="优" value="优">
+        <input type="button" id="团" value="团">
+        <input type="button" id="订" value="订">
+        <input type="button" id="买" value="买">
+    </div>
+    <div style="position: absolute; top:80px; left:5%;">
+        <img src="餐厅内部素材/star.png" style="width:30px; height:30px;"/>
+        <img src="餐厅内部素材/star.png" style="width:30px; height:30px;"/>
+        <img src="餐厅内部素材/star.png" style="width:30px; height:30px;"/>
+        <img src="餐厅内部素材/star.png" style="width:30px; height:30px;"/>
+        <img src="餐厅内部素材/star_grey.png" style="width:30px; height:30px;"/>
+    </div>
+    <h2>南京西路 | 西班牙菜 | 142元/人</h2>
+    <p>地址: 南京西路1515号静安嘉里中心南区B1层（地铁静安寺站）</p>
+    <input id="write" type="button" value="写点评" onclick="table_on();"/>
+</div>
+<img id="餐厅图片" src="餐厅内部素材/food.jpg" style="right:8%; top:264px; position:absolute; width:268px; height:201px;"/>
+<img id="地图" src="餐厅内部素材/ditu.jpg" style="right:8%; top:500px; position: absolute; width: 400px; height:300px;"/>
+
+<!--点评弹框-->
+<div id="table" class="commentTable">
+    <p style="top:22px">评星数:</p>
+    <input id="starN" type="text" placeholder="5"/>
+    <p style="top:70px">点评内容:</p>
+    <textarea id="content"></textarea>
+    <input type="button" value="提交点评" onclick="rate();"/>
+    <img src="餐厅内部素材/shut.png" style="width:20px; height:20px; position: absolute; right:10px; top:10px;"
+         onclick="close_table();"/>
+</div>
+
+<div class="attribute" id="1">
+    <input type="button" id="优惠" value="优">
+    <h1>优惠券</h1><h1 style="left:80%;">优惠买单</h1>
+    <Line/>
+</div>
+
+<div class="attribute" id="2">
+    <input type="button" id="团购" value="团">
+    <h1>团购</h1><h1 style="left:71%;">随时退&nbsp;过期退</h1>
+    <Line/>
+</div>
+
+<div class="attribute" style="height:120px;">
+    <input type="button" id="订座" value="订">
+    <h1>订座</h1><h1 style="left:80%;">联系店家</h1>
+    <Line/>
+    <p style="top:15px; position: absolute;">021-61737983</p>
+</div>
+
+<div class="attribute" style="height:150px;">
+    <input type="button" id="点单" value="点">
+    <h1>点单</h1><h1 style="left:80%;">在线点单</h1>
+    <input type="button" id="点单按钮" value="点此进入点单页面"
+           style="height:50px; width:250px; background: #7ed321;">
+    <Line/>
+</div>
+
+<div class="member">
+    <h1>成为会员</h1>
+    <p>现在加入，立享88折优惠，免费赠送饮料券。还可邀请朋友一起入会，免费赠送双人套餐一份。生日当天就餐可获得定制蛋糕和神秘
+        小礼品。<Br/>入会费：￥256（单次消费满1000自动成为会员，无需缴纳入会费）</p>
+    <input type="button" id="会员" value="成为会员">
+</div>
+
+<!--底部装饰-->
+<div id="bottom" style="left:0px; top:1200px; width:100%; height:222px; position: absolute;">
+    <img src="首页素材/timber.jpg" style="width:100%; height:222px; position: absolute;  z-index: -1"/>
+    <h4>美食-侦探</h4>
+    <h5>Made by School of Software Engineering in Tongji University</h5>
+</div>
+
+<script>
+    var y=0;
+    var t=0;
+    var Y = new Array();
+    Y[0]="满100减10";
+    Y[1]="满200减25";
+    var T = new Array();
+    T[0]="单人套餐 60元";
+    T[1]="双人套餐 120元";
+    if(y>0){
+        var h = 80;
+        h = h + 60*y;
+        document.getElementById("1").style.height = h+"px";
+        for(var i=0; i<y; i++){
+            var a = document.createElement("p");
+            var b = document.createElement("input");
+            b.type="button";
+            b.value="领取";
+            b.style.width="80px";
+            a.innerHTML = Y[i];
+            document.getElementById("1").appendChild(a);
+            document.getElementById("1").appendChild(b);
+            a.style.left="2%";
+            b.style.left="80%";
+            a.style.top=90+i*60 +"px";
+            b.style.top=85+i*60 +"px";
+        }
+    }
+    if(t>0){
+        var h = 80;
+        h = h + 60*t;
+        document.getElementById("2").style.height = h+"px";
+        for(var i=0; i<t; i++){
+            var a = document.createElement("p");
+            var b = document.createElement("input");
+            b.type="button";
+            b.value="购买";
+            b.style.width="80px";
+            a.innerHTML = T[i];
+            document.getElementById("2").appendChild(a);
+            document.getElementById("2").appendChild(b);
+            a.style.left="2%";
+            b.style.left="80%";
+            a.style.top=90+i*60 +"px";
+            b.style.top=85+i*60 +"px";
+        }
+    }
+    if((t+y) > 2){
+        var distance = 1200;
+        distance = distance + (t+y-2)*60;
+        var x = document.getElementById("bottom");
+        x.style.top=distance+"px";
+    }
+    // 弹窗显示点评及提交点评
+    function table_on(){
+        document.getElementById("table").style.display="block";
+    }
+    function rate(){
+        var num_star = document.getElementById("starN").value;
+        var content = document.getElementById("content").value;
+        if(num_star===""){
+            alert("评定的星数不能为空");
+        }
+        else if(parseInt(num_star)>5 || parseInt(num_star)<1){
+            alert("评定的星数格式不符合要求");
+        }
+        else {
+            alert("已成功提交点评")
+            document.getElementById("starN").value = "";
+            document.getElementById("content").value = "";
+            document.getElementById("table").style.display = "none";
+        }
+    }
+    function close_table(){
+        document.getElementById("starN").value = "";
+        document.getElementById("content").value = "";
+        document.getElementById("table").style.display = "none";
+    }
+</script>
+
+</body>
+</html>

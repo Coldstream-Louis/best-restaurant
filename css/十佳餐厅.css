@@ -1,0 +1,270 @@
+h1{font-family: "PingFang SC";
+    font-weight: 200;
+    font-size:20px;
+    color:#ffffff;
+    text-align:center;
+    left:50px;
+    top:12px;
+    position: absolute;
+}
+h2{font-family: "PingFang SC";
+    font-weight: 100;
+    font-size:10px;
+    color:#4a4a4a;
+    text-align:center;
+    left:28px;
+    top:50px;
+    position: absolute;
+}
+h3{font-family: "PingFang SC";
+    font-weight: 200;
+    font-size:18px;
+    color:#4a4a4a;
+    text-align:center;
+    top:20px;
+    position: absolute;
+}
+h3:hover{text-decoration: underline; font-weight: 400; cursor: pointer;}
+h4{font-family: "PingFang SC";
+    font-weight: 200;
+    font-size: 48px;
+    color:#ffffff;
+    text-align:center;
+    margin:50px auto 0 auto;
+}
+h5{font-family:"PingFang SC";
+    font-weight: 200;
+    font-size:20px;
+    color:#ffffff;
+    text-align:center;
+    margin:5px auto;
+}
+.greenRect{background:#7ed321;
+    width:194px;
+    height:100px;
+    top:0px;
+    left:127px;
+    position:absolute;
+}
+.navigatorBar{background:#ffffff;
+    box-shadow:0 2px 4px 0 rgba(0,0,0,0.50);
+    width:100%;
+    height:100px;
+    left:0px;
+    top:0px;
+    position:fixed;
+    z-index: 10;
+}
+
+#topten {
+    position: absolute;
+    top:10%;
+    left:0%;
+}
+#top1:hover,
+#top2:hover,
+#top3:hover,
+#top4:hover,
+#top5:hover,
+#top6:hover,
+#top7:hover,
+#top8:hover,
+#top9:hover,
+#top10:hover{
+    background-color: aquamarine;
+}
+/*     第一名    */
+#top1,#top2,#top3,#top4,#top5,#top6,#top7,#top8,#top9,#top10{
+     border: 1px dotted lightblue;
+     width:450px;
+     height:30px;
+     position: absolute;
+ }
+#top1{
+    top: 200px;
+    left:80px;
+}
+/*     第二名    */
+#top2{
+    top: 245px;
+    left:80px;
+}
+/*      第三名     */
+#top3{
+    top: 285px;
+    left:80px;
+}
+#top4{
+    top: 325px;
+    left:80px;
+}
+#top5{
+    top: 365px;
+    left:80px;
+}
+#top6{
+    top: 405px;
+    left:80px;
+}
+
+#top7{
+    top: 445px;
+    left:80px;
+}
+#top8{
+    top: 485px;
+    left:80px;
+}
+#top9{
+     top: 525px;
+     left:80px;
+ }
+#top10{
+    top: 565px;
+    left:80px;
+}
+#button1, #button2,#button3{
+    border:none;
+    color:white;
+    font-size: 10px;
+    background-color: red;
+    padding: 2px;
+    width: 20px;
+    height: 25px;
+    margin: 2px 0 2px 4px;
+}
+#button4,#button5,#button6,#button7,#button8,#button9,#button10{
+    border:none;
+    color:white;
+    font-size: 10px;
+    background-color: cadetblue;
+    padding: 2px;
+    width: 20px;
+    height: 25px;
+    margin: 2px 0 2px 4px;
+}
+h6{
+    font-size: 18px;
+    color: mediumblue;
+    position: absolute;
+    top:2px;
+    left:40px;
+    margin:0;
+    padding:0;
+}
+/*
+#top2 h1{
+    position: absolute;
+    top:-10px;
+    left:40px;
+}
+#top3 h1{
+    position: absolute;
+    top:-10px;
+    left:40px;
+}
+#top4 h1{
+    position: absolute;
+    top:-10px;
+    left:40px;
+}
+*/
+
+#top1 p,#top2 p,#top3 p,#top4 p,#top5 p,#top6 p,#top7 p,#top8 p,#top9 p,#top10 p{
+    position: absolute;
+    top:-10px;
+    left:370px;
+}
+
+#up1,#up3,#up4,#up7,#up8,#up9{
+    width:30px;
+    height:25px;
+    position: absolute;
+    top:2px;
+    left:415px;
+}
+
+#down1,#down5,#down6,#down10{
+    width:30px;
+    height:25px;
+    position: absolute;
+    top:2px;
+    left:415px;
+}
+
+#info{
+    position: absolute;
+    top:10%;
+    left:10%;
+}
+#info_img{
+    position: absolute;
+    top:200px;
+    left:600px;
+    width:460px;
+    height:350px;
+}
+
+#wujiaotu1,#wujiaotu2,#wujiaotu3,#wujiaotu4,#wujiaotu5{
+    width:30px;
+    height:30px;
+}
+#description{
+    position: absolute;
+    top:550px;
+    left:620px;
+    width:420px;
+    height:120px;
+    text-align: center;
+    color: black;
+}
+
+#wujiao{
+    position: absolute;
+    top:650px;
+    left:650px;
+    width:420px;
+    height:120px;
+}
+
+#buttons{
+    position: absolute;
+    top:650px;
+    left:860px;
+    width:150px;
+    height:120px;
+}
+#infobutton1,#infobutton2,#infobutton3,#infobutton4{
+    width:30px;
+    height:30px;
+    background-color: gold;
+    color:white;
+    border:none;
+    font-size: 16px;
+    padding:0;
+    text-align: center;
+}
+
+
+#title{
+    left:0px;
+    top:100px;
+    width: 100%;
+    height:82px;
+    position: absolute;
+}
+#title_img{
+    width:100%;
+    height:82px;
+    position: absolute;
+    top:0px;
+}
+#title h1{
+    color:white;
+    z-index: 1;
+    text-align: center;
+    font-size: 30px;
+    position: absolute;
+    top:0px;
+    left:465px;
+}

@@ -1,0 +1,130 @@
+h1{font-family: "PingFang SC";
+    font-weight: 200;
+    font-size:20px;
+    color:#ffffff;
+    text-align:center;
+    left:50px;
+    top:12px;
+    position: absolute;
+}
+h2{font-family: "PingFang SC";
+    font-weight: 100;
+    font-size:10px;
+    color:#4a4a4a;
+    text-align:center;
+    left:28px;
+    top:50px;
+    position: absolute;
+}
+h3{font-family: "PingFang SC";
+    font-weight: 200;
+    font-size:18px;
+    color:#4a4a4a;
+    text-align:center;
+    top:20px;
+    position: absolute;
+}
+h3:hover{text-decoration: underline; font-weight: 400; cursor: pointer;}
+h4{font-family: "PingFang SC";
+    font-weight: 100;
+    font-size: 48px;
+    color:#ffffff;
+    text-align:center;
+    margin:50px auto 0 auto;
+    z-index: 10;
+}
+h5{font-family:"PingFang SC";
+    font-weight: 200;
+    font-size:20px;
+    color:#ffffff;
+    text-align:center;
+    margin:5px auto;
+    z-index: 10;
+}
+.greenRect{background:#7ed321;
+    width:194px;
+    height:100px;
+    top:0px;
+    left:127px;
+    position:absolute;
+}
+.navigatorBar{background:#ffffff;
+    box-shadow:0 2px 4px 0 rgba(0,0,0,0.50);
+    width:100%;
+    height:100px;
+    left:0px;
+    top:0px;
+    position:fixed;
+    z-index: 100;
+}
+.navigatorBar Line{
+    width:100px;
+    height:4px;
+    top:96px;
+    position:absolute;
+    background:#4a4a4a
+}
+.halfTransparent{background:rgba(255,255,255,0.70);
+    width:313px;
+    height:581px;
+    left:127px;
+    top:100px;
+    position:absolute;
+    z-index: 2;
+}
+p{margin: 0; padding: 0;}
+.startButton{background:#7ed321;
+    width:250px;
+    height:50px;
+    left:27px;
+    top:320px;
+    position:absolute;
+    z-index: 5;
+}
+.startButton:hover{background: #00BB00; cursor: pointer;}
+.top10Block{background:#e6e6e6;
+    width:625px;
+    height:476px;
+    left:440px;
+    top:680px;
+    position: absolute;
+}
+h6{font-family:"PingFang SC";
+    font-weight: 400;
+    font-size:26px;
+    color:#4a4a4a;
+    text-align:left;
+    margin: 0; padding: 0;
+}
+.historyTopic{background:#b1d28d;
+    width:175px;
+    height:175px;
+    left:265px;
+    top:1156px;
+    position: absolute;
+}
+.historyTopic:hover{background: #00BB00;  cursor: pointer;}
+.historyContent{background:#70bc1e;
+    width:531px;
+    height:289px;
+    left:440px;
+    top:1156px;
+    position: absolute;
+}
+.collectionTopic{background:#70bb1e;
+    width:175px;
+    height:175px;
+    left:477px;
+    top:1885px;
+    position: absolute;
+    z-index: 4;
+}
+.collectionTopic:hover{background: #009100; cursor: pointer;}
+.collectionContent{background:#e6e6e6;
+    width:415px;
+    height:315px;
+    left:650px;
+    top:1885px;
+    position: absolute;
+    z-index: 4;
+}

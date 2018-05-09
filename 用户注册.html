@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>顾客注册</title>
+    <link rel="stylesheet" type="text/css" href="css/注册页元素.css" />
+</head>
+<body>
+
+<!--顶部导航栏-->
+<div class="navigatorBar">
+    <div id="name_block" class="greenRect">
+        <h1>美食-侦探</h1>
+        <h2>给你一双发现美食的眼睛</h2>
+    </div>
+    <h3 style="left:32%;">首页</h3> <!--可点-->
+    <h3 style="left:42%;">团购</h3> <!--可点-->
+    <h3 style="left:52%;">优惠</h3> <!--可点-->
+    <h3 style="left:62%;">订座</h3> <!--可点-->
+    <h3 style="left:72%;">点单</h3> <!--可点-->
+    <img src="注册页素材/avatar.png" style="left:82%; top:36px; width:25px; height:25px; position: absolute;"/>
+    <h3 style="left:85%;">注册&登录</h3> <!--可点-->
+</div>
+
+<div id="log">
+<img src="注册页素材/image.jpeg"/>
+    <div id="login"></div>
+    <div id="loginFace">
+        <h1 style="font-size:36px; left:160px;">注&nbsp;&nbsp;册</h1>
+        <form action="register.php" method="POST">
+            <ul style="list-style: none;">
+                <li id="first"><label for="username">昵称:</label><input id="username" type="text" name="username" /></li>
+                <li><label for="password1">密码:</label><input id="password1" type="password" name="password1" /></li>
+                <li><label for="password2">重复密码:</label><input id="password2" type="password" name="password2" /></li>
+                <li><label for="name">姓名:</label><input id="name" type="text" name="name" /></li>
+                <li><label for="phone">手机号:</label><input id="phone" type="text" name="email" /></li>
+                <li id="reg"><input id="register" type="button" value="提交" name="register" /></li>
+            </ul>
+        </form>
+    </div>
+</div>
+
+<!--底部装饰-->
+<div style="left:0px; top:800px; width:100%; height:222px; position: absolute; margin-top: 0;">
+    <img src="注册页素材/timber.jpg" style="width:100%; height:222px; position: absolute; z-index: -1"/>
+    <h4>美食-侦探</h4>
+    <h5>Made by School of Software Engineering in Tongji University</h5>
+</div>
+</body>
+</html>

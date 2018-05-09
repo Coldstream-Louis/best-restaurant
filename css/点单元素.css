@@ -1,0 +1,78 @@
+#head{
+    left:0px;
+    top:100px;
+    width:100%;
+    height:22px;
+    position: absolute;
+}
+#head img{
+    width:100%;
+    height:102px;
+    position: absolute;"
+}
+#head h1{
+    position: absolute;
+    text-align: center;
+    font-size: 35px;
+    top:10px;
+    left:48%;
+    color:white;
+}
+.dish{
+    border: 1px solid #999999;
+    width:24%;
+    height:360px;
+}
+.dish:hover{border: 2px solid #F9F900; background: #F9F900}
+.dish img{
+    width:100%;
+    height:216px;
+}
+h6.name{
+    font-family: "PingFang SC";
+    font-weight: 200;
+    font-size:28px;
+    text-align: center;
+    margin:10px auto;
+}
+h6.info{
+    font-family: "PingFang SC";
+    font-weight: 200;
+    font-size:20px;
+    text-align: center;
+    margin:10px auto;
+}
+
+.dish input[type="text"]{
+    text-align: center;
+    margin:auto;
+    width:80px;
+    height:24px;
+    font-size: 18px;
+    left: 35%;
+    position:absolute;
+    border:1px solid grey;
+    border-radius: 2px;
+}
+
+input[type="button"]{
+    width:100px;
+    height:40px;
+    top:1850px;
+    background: #FF8000;
+    color: white;
+    font-family: "PingFang SC";
+    font-weight: 200;
+    font-size: 20px;
+    position: absolute;
+    border:none;
+}
+input[type="button"]:hover{cursor: pointer; background: #00BB00; font-weight: 400;}
+p{
+    font-family: "PingFang SC";
+    font-weight: 200;
+    font-size: 22px;
+    margin:1855px auto 0 auto;
+    color:#4a4a4a;
+    text-align: center;
+}

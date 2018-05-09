@@ -1,0 +1,89 @@
+body {
+  background-color: rgb(255, 255, 255);
+  font: 400 1em/1.38 Helvetica;
+  color: rgb(255, 255, 255);
+}
+
+.element {
+  position: relative;
+  float: left;
+  background-repeat: no-repeat;
+  background-position: left top;
+}
+
+.text {
+  position: relative;
+  float: left;
+  clear: both;
+  z-index: 1;
+  margin: -600px 0 0 46%;
+  font-size: 2.5em;
+  color: rgb(255, 255, 255);
+}
+
+._button {
+  display: block;
+  position: relative;
+  float: left;
+  border-radius: 10px;
+  font-size: 1em;
+  text-align: center;
+}
+
+._input {
+  display: block;
+  position: relative;
+  float: left;
+  width: 20%;
+  height: 30px;
+  margin-left: 38.7486979166%;
+  padding: 0 10px;
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 10px;
+  background-color: rgba(242, 242, 242, 0);
+  font-size: 0.813em;
+  color: rgb(255, 255, 255);
+}
+
+._button-1 {
+  z-index: 6;
+  width: 22%;
+  height: 30px;
+  margin: -380px 0 0 38.7487%;
+  background-color: rgb(41, 193, 20);
+  border: none;
+  color: rgb(255, 255, 255);
+}
+._button-1:hover{cursor:pointer;}
+
+._button-2 {
+  z-index: 7;
+  width: 8%;
+  height: 20px;
+  margin: -317px 0 0 38%;
+  background-color: rgba(222, 222, 222, 0);
+  border: none;
+  color: rgb(255, 255, 255);
+}
+._button-2:hover{cursor:pointer;}
+
+._button-3 {
+  z-index: 8;
+  width: 8%;
+  height: 20px;
+  margin: -317px 0 0 55%;
+  background-color: rgba(222, 222, 222, 0);
+  border: none;
+  color: rgb(255, 255, 255);
+}
+._button-3:hover{cursor:pointer;}
+
+._input-1 {
+  z-index: 2;
+  margin-top: -517px;
+}
+
+._input-2 {
+  z-index: 3;
+  margin-top: -451px;
+}

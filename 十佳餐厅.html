@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>十佳餐厅</title>
+    <link rel="stylesheet" type="text/css" href="css/十佳餐厅.css" />
+    <script type="text/javascript">
+        //鼠标悬浮更换右侧内容
+        function topHover(str){
+            var num="canting"+str;
+            var src="十佳餐厅素材/"+num+".jpg";
+            var word="name"+str;
+            document.getElementById("info_img").src=src;
+            document.getElementById("store").innerHTML=document.getElementById(word).innerHTML;
+        }
+    </script>
+</head>
+
+<!--顶部导航栏-->
+<div class="navigatorBar">
+    <div id="name_block" class="greenRect">
+        <h1>美食-侦探</h1>
+        <h2>给你一双发现美食的眼睛</h2>
+    </div>
+    <h3 style="left:32%;">首页</h3>
+    <h3 style="left:42%;">团购</h3>
+    <h3 style="left:52%;">优惠</h3>
+    <h3 style="left:62%;">订座</h3>
+    <h3 style="left:72%;">点单</h3>
+    <img src="十佳餐厅素材/avatar.png" style="left:82%; top:36px; width:25px; height:25px; position: absolute;"/>
+    <h3 style="left:85%;">Hello! 徐哲涵</h3>
+</div>
+
+<div id="title">
+    <img src="十佳餐厅素材/timber.jpg" id="title_img"/>
+    <h1>本&nbsp;季&nbsp;度&nbsp;热&nbsp;销&nbsp;榜&nbsp;TOP&nbsp;10&nbsp;!</h1>
+</div>
+
+<!--左侧排行榜-->
+<div id="topten">
+    <div id="top1" onmouseover="topHover('1')">
+        <button id="button1">1</button>
+        <h6 id="name1">PINTXOS</h6>
+        <p id="p1">3028</p>
+        <img src="十佳餐厅素材/up.jpg" id="up1" />
+    </div>
+
+    <div id="top2" onmouseover="topHover('2')">
+        <button id="button2">2</button>
+        <h6 id="name2">SOXTNIP</h6>
+        <p id="p2">2803</p>
+        <img src="十佳餐厅素材/down.jpg" id="down1" />
+    </div>
+
+    <div id="top3" onmouseover="topHover('3')">
+        <button id="button3">3</button>
+        <h6 id="name3">SJSDEIX</h6>
+        <p id="p3">2669</p>
+        <img src="十佳餐厅素材/up.jpg" id="up3" />
+    </div>
+
+    <div id="top4" onmouseover="topHover('4')">
+        <button id="button4">4</button>
+        <h6 id="name4">SDFKSLL</h6>
+        <p id="p4">2339</p>
+        <img src="十佳餐厅素材/up.jpg" id="up4" />
+    </div>
+
+    <div id="top5" onmouseover="topHover('5')">
+        <button id="button5">5</button>
+        <h6 id="name5">SALKFXV</h6>
+        <p id="p5">2188</p>
+        <img src="十佳餐厅素材/down.jpg" id="down5" />
+    </div>
+
+    <div id="top6" onmouseover="topHover('6')">
+        <button id="button6">6</button>
+        <h6 id="name6">LBOJODSIE</h6>
+        <p id="p6">2088</p>
+        <img src="十佳餐厅素材/down.jpg" id="down6" />
+    </div>
+
+    <div id="top7" onmouseover="topHover('7')">
+        <button id="button7">7</button>
+        <h6 id="name7">DSKFIIW</h6>
+        <p id="p7">1998</p>
+        <img src="十佳餐厅素材/up.jpg" id="up7" />
+    </div>
+
+    <div id="top8" onmouseover="topHover('8')">
+        <button id="button8">8</button>
+        <h6 id="name8">ASLFALWLW</h6>
+        <p id="p8">1980</p>
+        <img src="十佳餐厅素材/up.jpg" id="up8" />
+    </div>
+
+    <div id="top9" onmouseover="topHover('9')">
+        <button id="button9">9</button>
+        <h6 id="name9">SLDFKIEE</h6>
+        <p id="p9">1899</p>
+        <img src="十佳餐厅素材/up.jpg" id="up9" />
+    </div>
+    <div id="top10" onmouseover="topHover('10')">
+        <button id="button10">10</button>
+        <h6 id="name10">LSKDJFVW</h6>
+        <p id="p10">1799</p>
+        <img src="十佳餐厅素材/down.jpg" id="down10" />
+    </div>
+</div>
+
+<p style="font-size: 16px; position: absolute; left:10%; top:680px; text-align:center;">
+    以上评分排行来源于顾客的点评、餐厅<Br/>的人气度和实地考察的真实情况,非权威排行,仅供参考
+</p>
+
+<Line style="left:50%; top:250px; position:absolute; width:2px; height:500px; background:#4a4a4a;"></Line>
+
+<!--右侧显示部分-->
+<div id="info">
+    <img src="十佳餐厅素材/canting1.jpg" id="info_img">
+    <div id="description">
+        <p id="store" style="font-size:20px;">PINTXOS</p>
+        <p id="info1">南京西路 | 西班牙菜 | ¥142/人</p>
+    </div>
+    <div id="wujiao">
+        <img src="十佳餐厅素材/wujiao.jpg" id="wujiaotu1">
+        <img src="十佳餐厅素材/wujiao.jpg" id="wujiaotu2">
+        <img src="十佳餐厅素材/wujiao.jpg" id="wujiaotu3">
+        <img src="十佳餐厅素材/wujiao.jpg" id="wujiaotu4">
+        <img src="十佳餐厅素材/wujiao.jpg" id="wujiaotu5">
+    </div>
+    <div id="buttons">
+        <button id="infobutton1">优</button>
+        <button id="infobutton2">团</button>
+        <button id="infobutton3">订</button>
+        <button id="infobutton4">买</button>
+    </div>
+</div>
+
+
+<!--底部装饰-->
+<div style="left:0px; top:800px; width:100%; height:222px; position: absolute; ">
+    <img src="十佳餐厅素材/timber.jpg" style="width:100%; height:222px; position: absolute; z-index: -1;"/>
+    <h4>美食-侦探</h4>
+    <h5>Made by School of Software Engineering in Tongji University</h5>
+</div>
+</body>
+</html>

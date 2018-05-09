@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>点单界面</title>
+    <link rel="stylesheet" type="text/css" href="css/通用元素.css" />
+    <link rel="stylesheet" type="text/css" href="css/点单元素.css" />
+</head>
+<body>
+<!--顶部导航栏-->
+<div class="navigatorBar">
+    <div id="name_block" class="greenRect">
+        <h1>美食-侦探</h1>
+        <h2>给你一双发现美食的眼睛</h2>
+    </div>
+    <h3 style="left:32%;">首页</h3> <!--可点-->
+    <h3 style="left:42%;">团购</h3> <!--可点-->
+    <h3 style="left:52%;">优惠</h3> <!--可点-->
+    <h3 style="left:62%;">订座</h3> <!--可点-->
+    <h3 style="left:72%;">点单</h3> <!--可点-->
+    <img src="首页素材/avatar.png" style="left:82%; top:36px; width:25px; height:25px; position: absolute;"/>
+    <h3 style="left:85%">Hello! 徐哲涵</h3> <!--可点-->
+</div>
+
+<!--标题-->
+<div id="head" >
+    <img src="点单素材/timber.jpg" />
+    <h1 style="margin:20px auto; text-align: center;">点单</h1>
+</div>
+
+<div id="1" class="dish" style="left:8%; top:250px; position: absolute;">
+    <img src="点单素材/food.jpg"/>
+    <h6 class="name">西班牙海鲜饭</h6>
+    <h6 class="info">98元</h6>
+    <input id="1_n" type="text" value="0"/>
+</div>
+
+<div id="2" class="dish" style="left:38%; top:250px; position: absolute;">
+    <img src="点单素材/food.jpg"/>
+    <h6 class="name">西班牙海鲜饭</h6>
+    <h6 class="info">98元</h6>
+    <input id="2_n" type="text" value="0"/>
+</div>
+
+<div id="3" class="dish" style="left:68%; top:250px; position: absolute;">
+    <img src="点单素材/food.jpg"/>
+    <h6 class="name">西班牙海鲜饭</h6>
+    <h6 class="info">98元</h6>
+    <input id="3_n" type="text" value="0"/>
+</div>
+
+<div id="4" class="dish" style="left:8%; top:650px; position: absolute;">
+    <img src="点单素材/food.jpg"/>
+    <h6 class="name">西班牙海鲜饭</h6>
+    <h6 class="info">98元</h6>
+    <input id="4_n" type="text" value="0"/>
+</div>
+
+<div id="5" class="dish" style="left:38%; top:650px; position: absolute;">
+    <img src="点单素材/food.jpg"/>
+    <h6 class="name">西班牙海鲜饭</h6>
+    <h6 class="info">98元</h6>
+    <input id="5_n" type="text" value="0"/>
+</div>
+
+<div id="6" class="dish" style="left:68%; top:650px; position: absolute;">
+    <img src="点单素材/food.jpg"/>
+    <h6 class="name">西班牙海鲜饭</h6>
+    <h6 class="info">98元</h6>
+    <input id="6_n" type="text" value="0"/>
+</div>
+
+<div id="7" class="dish" style="left:8%; top:1050px; position: absolute;">
+    <img src="点单素材/food.jpg"/>
+    <h6 class="name">西班牙海鲜饭</h6>
+    <h6 class="info">98元</h6>
+    <input id="7_n" type="text" value="0"/>
+</div>
+
+<div id="8" class="dish" style="left:38%; top:1050px; position: absolute;">
+    <img src="点单素材/food.jpg"/>
+    <h6 class="name">西班牙海鲜饭</h6>
+    <h6 class="info">98元</h6>
+    <input id="8_n" type="text" value="0"/>
+</div>
+
+<div id="9" class="dish" style="left:68%; top:1050px; position: absolute;">
+    <img src="点单素材/food.jpg"/>
+    <h6 class="name">西班牙海鲜饭</h6>
+    <h6 class="info">98元</h6>
+    <input id="9_n" type="text" value="0"/>
+</div>
+
+<div id="10" class="dish" style="left:8%; top:1450px; position: absolute;">
+    <img src="点单素材/food.jpg"/>
+    <h6 class="name">西班牙海鲜饭</h6>
+    <h6 class="info">98元</h6>
+    <input id="10_n" type="text" value="0"/>
+</div>
+
+<div class="dish" style="left:38%; top:1450px; position: absolute;">
+</div>
+
+<div class="dish" style="left:68%; top:1450px; position: absolute;">
+</div>
+
+<input type="button" value="计算总价" style="left:37%" onclick="calculate();"/>
+<p id="totalPrice">0</p>
+<input type="button" value="确认下单" style="left:55%; background:#7ed321" onclick=""/>
+<!--底部装饰-->
+<div style="left:0px; top:1920px; width:100%; height:222px; position: absolute;">
+    <img src="首页素材/timber.jpg" style="width:100%; height:222px; position: absolute;  z-index: -1"/>
+    <h4>美食-侦探</h4>
+    <h5>Made by School of Software Engineering in Tongji University</h5>
+</div>
+<script>
+    var price_list = new Array(98, 98, 98, 98, 98, 98, 98, 98, 98, 98);
+    function calculate(){
+        var total = 0;
+        for(var i=1; i<=10; i++){
+            if(document.getElementById(i+"_n").value === "")
+                continue;
+            var price = price_list[i-1];
+            var number = parseInt(document.getElementById(i+"_n").value);
+            total = total + price * number;
+        }
+        document.getElementById("totalPrice").innerHTML = total.toString()+"元";
+    }
+</script>
+</body>
+</html>
